@@ -8,21 +8,8 @@ public class PokemonFarm {
 	public static void main(String[] args) {
 		
 		System.out.println("ยืนดีต้อนรับสู่ฟาร์ม Pokemon");
-		Scanner data = new Scanner(System.in);
 		System.out.print("ป้อนจำนวน Pokemon ที่ต้องการสร้าง: ");
 		
-		int amount = data.nextInt();
-		
-		ArrayList<ListPokemon> list;
-		list = new ArrayList<ListPokemon>();
-		
-		for(int i=0; i<amount; i++) {
-			System.out.printf("ตั้งชื่อให้กับ Pokemon ตัวที่  %d : ",i+1);
-			String names = data.next();
-			float weight = (float)Math.random()*100;
-			float step = (float)Math.random()*10;
-			list.add(new ListPokemon(names,weight,step));
-	    }
 		
 		System.out.print("ป้อนคำสั่ง(list): ");
 		String command = data.next();
@@ -37,5 +24,23 @@ public class PokemonFarm {
 			}
 		}
 	}
+	
+	public class PokemonList {
+	
+		Scanner data = new Scanner(System.in);	
+	-
+		int amount = data.nextInt();
+		
+		ArrayList<ListPokemon> list;
+		list = new ArrayList<ListPokemon>();
+	
+		for(int i=0; i<amount; i++) {
+			System.out.printf("ตั้งชื่อให้กับ Pokemon ตัวที่  %d : ",i+1);
+			String names = data.next();
+			float weight = (float)Math.random()*100;
+			float step = (float)Math.random()*10;
+			list.add(new ListPokemon(names,weight,step));
+		}
+	
 
-}
+	}
