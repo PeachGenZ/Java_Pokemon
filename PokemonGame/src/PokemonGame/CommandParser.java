@@ -31,21 +31,27 @@ public class CommandParser {
 				this.listPokemons();
 			else if(command.equals("feed"))
 				this.feedPokemons();
+			else if(command.equals("exercise"))
+				this.exercisePokemons();
+			else if(command.equals("walk"))
+				this.walkPokemons();
+			else if(command.equals("sleep"))
+				this.sleepPokemons();
 		}
 
 	}
 
 	private void addPokemon(){
 		commandScanner.nextLine();
-		System.out.println("Input Pokemon Type");
+		System.out.println("Input Pokemon");
 		System.out.println("==>Goduck");
 		System.out.println("==>Zenigame");
 		System.out.println("==>Ringnguma");
-		System.out.print("Type:");
+		System.out.print(":");
 		String pokemonType = commandScanner.next();
 		System.out.print("Input Name: ");
 		String name = commandScanner.next();
-		System.out.print("Input weight: ");
+		System.out.print("Input weight(kg): ");
 		float weight = commandScanner.nextFloat();
 		System.out.print("Input step length: ");
 		float stepLength = commandScanner.nextFloat();
@@ -76,10 +82,46 @@ public class CommandParser {
 	}
 
 	private void feedPokemons(){
-		System.out.print("Which pokemon do you want to feed? ");
+		System.out.print("Which pokemon do you want to feed?\n: ");
 		String name = this.commandScanner.next();
 		if(name.equals("all")){
 			this.pokemonFarm.feed("all");
+		}
+		else{
+			this.pokemonFarm.feed(name);
+		}
+	}
+	
+	private void exercisePokemons() {
+		System.out.print("Which pokemon do you want to exercis?\n: ");
+		String name = this.commandScanner.next();
+		if(name.equals("all")) {
+			this.pokemonFarm.exercise("all");
+		}
+		else{
+			this.pokemonFarm.exercise(name);
+		}
+	}
+	
+	private void walkPokemons() {
+		System.out.print("Which pokemon do you want to walk?\n: ");
+		String name = this.commandScanner.next();
+		if(name.equals("all")) {
+			this.pokemonFarm.walk("all");
+		}
+		else{
+			this.pokemonFarm.walk(name);
+		}
+	}
+	
+	private void sleepPokemons() {
+		System.out.print("Which pokemon do you want to sleep?\n: ");
+		String name = this.commandScanner.next();
+		if(name.equals("all")) {
+			this.pokemonFarm.sleep("all");
+		}
+		else{
+			this.pokemonFarm.sleep(name);
 		}
 	}
 }
