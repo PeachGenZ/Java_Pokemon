@@ -94,20 +94,23 @@ public class CommandParser {
 	        System.out.println("Finding Wild Pokemon");
 	        if(numOfPoke == 0){
 	            System.out.println("----------------------------");
-	            System.out.println("You found Dragonair!!");
+	            System.out.println("You found Goduck");
 	            System.out.println("----------------------------");
+	            type = "Goduck";
 	            opportunity = wild.catchPokemon();
 	        }
 	        else if(numOfPoke == 1){
 	            System.out.println("----------------------------");
-	            System.out.println("You found Magikarp!!");
+	            System.out.println("You found Zenigame");
 	            System.out.println("----------------------------");
+	            type = "Zenigame";
 	            opportunity = wild.catchPokemon();
 	        }
 	        else if(numOfPoke == 2){
 	            System.out.println("----------------------------");
-	            System.out.println("You found Ponyta!!");
+	            System.out.println("You found Ringnguma");
 	            System.out.println("----------------------------");
+	            type = "Ringnguma";
 	            opportunity = wild.catchPokemon();
 	        }
 	        
@@ -130,7 +133,7 @@ public class CommandParser {
 	                    	Zenigame zenigame = new Zenigame(name, weight, stepLength);
 	                        backpack.addPokemon(zenigame);
 	                    }
-	                    else if(type.equals("Ponyta")) {
+	                    else if(type.equals("Ringnguma")) {
 	                    	Ringnguma ringnguma = new Ringnguma(name, weight, stepLength);
 	                        backpack.addPokemon(ringnguma);
 	                    }
