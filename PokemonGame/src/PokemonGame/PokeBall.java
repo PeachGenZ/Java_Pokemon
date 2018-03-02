@@ -1,28 +1,28 @@
 package PokemonGame;
 
+import java.util.Random;
+
 public class PokeBall {
-	private float pokeball;
-	private float greatball;
-	private float ultraball;
-	
-	public PokeBall() {
-		pokeball = (float) 0.8;
-		greatball = (float) 0.9;
-		ultraball = (float) 1.0;
-	}
 
-	public float getPokeball() {
-		return pokeball;
-	}
+	public double typeBall(){
+        Random rand = new Random();
+        double pokeball = 0;
 
-
-	public float getGreatball() {
-		return greatball;
-	}
-
-
-	public float getUltraball() {
-		return ultraball;
-	}
+        int numPokeball = rand.nextInt(3);
+        System.out.print("You get ");
+        if(numPokeball == 0){
+            System.out.println("PokeBall!!");
+            pokeball = 0.8;
+        }
+        else if(numPokeball == 1){
+            System.out.println("GreatBall!!");
+            pokeball = 0.9;
+        }
+        else if(numPokeball == 2) {
+            System.out.println("UltraBall!!");
+            pokeball = 1.0;
+        }
+        return pokeball;
+    }
 
 }
