@@ -1,5 +1,6 @@
+package pokemon;
 
-public class Berry{
+public class Berry {
 	private String name;
 	private float restoreValue;
 	private int type;
@@ -28,4 +29,3 @@ public class Berry{
 		return this.restoreValue;
 	}
 }
-

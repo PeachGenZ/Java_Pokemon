@@ -1,5 +1,6 @@
-import java.util.*;
+package pokemon;
 
+import java.util.*;
 import pokemon.Berry;
 
 public class PokemonGame{
@@ -13,12 +14,9 @@ public class PokemonGame{
 	public static void main(String args[]){
 		ArrayList<Pokemon> pokemons = new ArrayList<Pokemon>();
 		for(int i=0; i<5; ++i){
-			pokemons.add(new Pikachu());
+			pokemons.add(new Psyduck());
 		}
-		
-		for(int i=0; i<5; ++i){
-			pokemons.add(new Zenigame());
-		}
+	
 		
 
 		printPokemons(pokemons);

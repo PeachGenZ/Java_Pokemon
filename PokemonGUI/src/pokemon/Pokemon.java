@@ -1,3 +1,5 @@
+package pokemon;
+
 import pokemon.Berry;
 
 abstract class Pokemon{
