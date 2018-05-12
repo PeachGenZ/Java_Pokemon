@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -20,14 +21,16 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
 
 public class GUI extends JFrame{
-		private JLabel showNames, showOptions, icon;
+		private JLabel Pokemon, selectFood, selectPokemon, icon;
 		private JTextField textField;
 		private JButton eatButton, statusButton;
 		private JTextArea statusArea;
-		private JPanel toppicZone,buttonZone, statusZone,selectZone;
-		private JRadioButton selectPokemon;
+		private JPanel panel;
+		private JRadioButton psyduck,snorlax,meowth;
+		private JComboBox foodBox;
 		private String pokemonNames[];
 		private Icon start;
 
@@ -36,50 +39,68 @@ public class GUI extends JFrame{
 		{
 			super("PokemonGUI");
 	        Container c = getContentPane();
-	        c.setLayout(new BorderLayout());
+	        c.setBounds(100, 100, 850, 550);
 	        pokemonNames = new String[] {"Psyduck", "Meowth", "Snorlax"};
 	        
-	        //Set panel
-	        toppicZone = new JPanel();
-	        toppicZone.setLayout(new FlowLayout());
-	        buttonZone = new JPanel();
-	        buttonZone.setLayout(new FlowLayout());
-	        selectZone = new JPanel();
-	        selectZone.setLayout(new FlowLayout());
-	        statusZone = new JPanel();
-	        statusZone.setLayout(null);
+	        //Set panel;
+	        panel = new JPanel();
+	        panel.setLayout(null);
 	        
-	        //Create components
-	        showNames = new JLabel("PokemonNameTest");
-	        showOptions = new JLabel("Pokemon Control");
-	        eatButton = new JButton("Feed");
-	        statusButton = new JButton("Show_status");
+	        //Create components and set position
+	        Pokemon = new JLabel("Pokemon");
+	        Pokemon.setFont(new Font("Tahoma", Font.PLAIN, 18));
+	        Pokemon.setBounds(380, 10, 73, 22);
+	        selectFood = new JLabel("Select Food");
+	        selectFood.setFont(new Font("Tahoma", Font.PLAIN, 12));
+	        selectFood.setBounds(680, 40, 65, 29);
+	        selectPokemon = new JLabel("Select Pokemons");
+	        selectPokemon.setFont(new Font("Tahoma", Font.PLAIN, 12));
+	        selectPokemon.setBounds(66, 47, 98, 14);
+	        
 	        textField = new JTextField("",10);
-	        statusArea = new JTextArea("",10,2);
-	        statusArea.setBounds(50, 20, 80, 80);
+	        
+	        statusArea = new JTextArea("",425,227);
+	        statusArea.setBounds(202, 249, 425, 227);
+	        
 	        eatButton = new JButton("Feed");
+	        eatButton.setBounds(668, 108, 89, 23);
 	        statusButton =  new JButton("Status");
+	        statusButton = new JButton("Show_status");
+	        
+	        foodBox = new JComboBox();
+	        foodBox.setBounds(619, 71, 183, 20);
+	        
+	        psyduck = new JRadioButton("Psyduck");
+	        psyduck.setBounds(80, 70, 109, 23);
+	        snorlax = new JRadioButton("Snorlax");
+	        snorlax.setBounds(80, 96, 109, 23);
+	        meowth = new JRadioButton("Meowth");
+	        meowth.setBounds(80, 122, 109, 23);
+	        
 	        
 	        //Create Icon
-	        start = new ImageIcon(getClass().getResource("Start.png"));
+	        start = new ImageIcon(getClass().getResource("StartGame.png"));
 	        icon = new JLabel("");
 	        icon.setIcon(start);
-	        icon.setBounds(150, 10, 500, 500);
+	        icon.setBounds(274, 43, 280, 188);
 	        
 	        //set layout
-	        toppicZone.add(showNames);
-	        buttonZone.add(showOptions);
-	        statusZone.add(icon);
-	        statusZone.add(statusArea);
-	        c.add(toppicZone, BorderLayout.PAGE_START);
-	        c.add(buttonZone, BorderLayout.PAGE_END);
-	        c.add(statusZone, BorderLayout.CENTER);
-	        c.add(selectZone, BorderLayout.LINE_END);
-
+	        panel.add(Pokemon);
+	        panel.add(selectFood);
+	        panel.add(selectPokemon);
+	        panel.add(icon);
+	        panel.add(statusArea);
+	        panel.add(foodBox);
+	        panel.add(eatButton);
+	        panel.add(psyduck);
+	        panel.add(snorlax);
+	        panel.add(meowth);
+	        
+	        c.add(panel);
 	        //set others
 	        setLocationRelativeTo(null);
 	        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	        pack();
+	        setSize(850, 550);
 	        setVisible(true);
 		}
 		
