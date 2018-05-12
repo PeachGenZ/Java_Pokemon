@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="D:\Peach\Downloads\Compressed\PokemonGUI-master\src\gui"/>
+		<item value="D:\Peach\Downloads\Compressed\PokemonGUI-master\src\pokemongui"/>
+		<item value="C:\Users\Peach\eclipse-workspace\PokemonGUI-master"/>
+		<item value="D:\Peach\Downloads\GUI"/>
+		<item value="D:\Peach\Downloads\Compressed\PokemonGUI-master\PokemonGUI-master\src"/>
+		<item value="D:\Peach\Downloads\Compressed\PokemonGUI-master\PokemonGUI-master\src\gui"/>
+		<item value="D:\Peach\Downloads\Compressed\PokemonGUI-master\PokemonGUI-master\src\pokemongui"/>
+		<item value="D:\Peach\Downloads\Compressed\PokemonGUI-master\PokemonGUI-master"/>
 		<item value="D:\Peach\Downloads\Test"/>
 		<item value="D:\Peach\Downloads\555"/>
 	</list>

@@ -1,10 +1,10 @@
 package pokemon;
 
-public class Psyduck extends Pokemon implements Runnable{
-	private static final int maxGroupHealth = 200;
-	public Psyduck(){
+public class Psyduck extends Pokemon implements Runnable {
+    private static final int maxGroupHealth = 200;
+	public  Psyduck(){
 		super("Psyduck",
-		      (Math.random()*1000) % (maxGroupHealth+1));
+		      80,45.00);
 
 		this.attackSkill = PokemonSkill.getPokemonSkill("Thunder Shock");
 		this.untimatedSkill = PokemonSkill.getPokemonSkill("Thunderbolt");
@@ -15,10 +15,10 @@ public class Psyduck extends Pokemon implements Runnable{
 	}
 
 	public void run(){
-		this.reducedHealth(10);
+		this.reducedWeight(1.5);
 	}
 
 	public void walk(){
-		this.reducedHealth(1);
+		this.reducedWeight(0.5);
 	}
 }

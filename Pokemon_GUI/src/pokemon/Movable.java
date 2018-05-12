@@ -1,3 +1,4 @@
+
 package pokemon;
 
 interface Runnable{
@@ -8,3 +9,4 @@ interface Runnable{
 interface Swimmable{
 	public void swim();
 }
+

@@ -1,6 +1,6 @@
-package pokemon;
+package pokemongui;
 
-public class PokemonSkill {
+public class PokemonSkill{
 	private String name;
 	private float damage;
 
