@@ -26,6 +26,15 @@ import javax.swing.JButton;
 import javax.swing.JRadioButton;
 import javax.swing.JComboBox;
 import javax.swing.JTextField;
+import javax.swing.JToggleButton;
+import javax.swing.JSpinner;
+import javax.swing.JList;
+import javax.swing.JScrollBar;
+import javax.swing.JProgressBar;
+import javax.swing.JSlider;
+import javax.swing.JTree;
+import javax.swing.JTable;
+import java.awt.Choice;
 
 public class Test extends JFrame {
 
@@ -70,7 +79,6 @@ public class Test extends JFrame {
 		JTextArea txtrText = new JTextArea();
 		txtrText.setBounds(202, 249, 425, 227);
 		txtrText.setDropMode(DropMode.INSERT);
-		txtrText.setText("Text");
 		contentPane.add(txtrText);
 		
 		JRadioButton rdbtnNewRadioButton = new JRadioButton("Psyduck");
@@ -82,7 +90,6 @@ public class Test extends JFrame {
 		contentPane.add(rdbtnNewRadioButton_1);
 		
 		JRadioButton rdbtnNewRadioButton_2 = new JRadioButton("Meowth");
-		rdbtnNewRadioButton_2.setSelected(true);
 		rdbtnNewRadioButton_2.setBounds(80, 122, 109, 23);
 		contentPane.add(rdbtnNewRadioButton_2);
 		

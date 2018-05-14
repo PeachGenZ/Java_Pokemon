@@ -7,9 +7,11 @@ import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 
 import javax.swing.BoxLayout;
+import javax.swing.ButtonGroup;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -32,7 +34,7 @@ public class GUI extends JFrame{
 		private JRadioButton psyduck,snorlax,meowth;
 		private JComboBox foodBox;
 		private String pokemonNames[];
-		private Icon start;
+		private Icon start, psyduckIcon, snorlaxIcon, meowthIcon ;
 
 		
 		public GUI()
@@ -77,14 +79,42 @@ public class GUI extends JFrame{
 	        meowth = new JRadioButton("Meowth");
 	        meowth.setBounds(80, 122, 109, 23);
 	        
+	        ButtonGroup group = new ButtonGroup();
+	        group.add(psyduck);
+	        group.add(snorlax);
+	        group.add(meowth);
+	        
+	        
 	        
 	        //Create Icon
 	        start = new ImageIcon(getClass().getResource("StartGame.png"));
+	        psyduckIcon = new ImageIcon(getClass().getResource("Psyduck.png"));
+	        snorlaxIcon = new ImageIcon(getClass().getResource("Snorlax.png"));
+	        meowthIcon = new ImageIcon(getClass().getResource("Meowth.png"));
 	        icon = new JLabel("");
 	        icon.setIcon(start);
 	        icon.setBounds(274, 43, 280, 188);
 	        
-	        //set layout
+	        //Add action listener
+	        psyduck.addActionListener(new ActionListener() {
+	        	public void actionPerformed(ActionEvent e) {
+	    	        icon.setIcon(psyduckIcon);
+	        	}
+	        });
+	        
+	        snorlax.addActionListener(new ActionListener() {
+	        	public void actionPerformed(ActionEvent e) {
+	    	        icon.setIcon(snorlaxIcon);
+	        	}
+	        });
+	        
+	        meowth.addActionListener(new ActionListener() {
+	        	public void actionPerformed(ActionEvent e) {
+	    	        icon.setIcon(meowthIcon);
+	        	}
+	        });
+	        
+	        //Set layout
 	        panel.add(Pokemon);
 	        panel.add(selectFood);
 	        panel.add(selectPokemon);
@@ -97,7 +127,8 @@ public class GUI extends JFrame{
 	        panel.add(meowth);
 	        
 	        c.add(panel);
-	        //set others
+	        
+	        //Set others
 	        setLocationRelativeTo(null);
 	        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	        setSize(850, 550);
