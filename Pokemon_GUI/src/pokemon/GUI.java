@@ -1,9 +1,15 @@
 package pokemon;
 
+import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
+
 import javax.swing.ButtonGroup;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -16,13 +22,13 @@ import javax.swing.JRadioButton;
 import javax.swing.JTextArea;
 
 public class GUI extends JFrame{
-		private JLabel Pokemon, selectFood, selectPokemon, pokemonIcon, pokeballIcon1, pokeballIcon2, pokeballIcon3, pokeballIcon4, pokeballIcon5;
+		private JLabel Pokemon, selectFood, selectPokemon, pokemonIcon, pokeballIcon1, pokeballIcon2, pokeballIcon3, pokeballIcon4, pokeballIcon5, backgoundLabel;
 		private JButton eatButton, exerciseButton, sleepButton;
 		private JTextArea statusArea;
 		private JPanel panel;
 		private JRadioButton psyduck,snorlax,meowth;
 		private JComboBox foodBox;
-		private Icon start, psyduckIcon, snorlaxIcon, meowthIcon, pokeballIcon, psyduckLazy, snorlaxLazy, meowthLazy, persianIcon, goldduckIcon, bigPokeball ;
+		private Icon start, psyduckIcon, snorlaxIcon, meowthIcon, pokeballIcon, psyduckLazy, snorlaxLazy, meowthLazy, persianIcon, goldduckIcon, bigPokeball, backgound, backgound2, backgound1, backgound3 ;
 		private String berryNames[];
 		private Command command;
 		
@@ -101,12 +107,17 @@ public class GUI extends JFrame{
 	        goldduckIcon = new ImageIcon(getClass().getResource("Goldduck.png"));
 	        pokeballIcon = new ImageIcon(getClass().getResource("Pokeball.gif"));
 	        bigPokeball = new ImageIcon(getClass().getResource("BigPokeball.png"));
+	        backgound = new ImageIcon(getClass().getResource("Backgound.png"));
+	        backgound1 = new ImageIcon(getClass().getResource("Backgound2.jpg"));
+	        backgound2 = new ImageIcon(getClass().getResource("Backgound1.jpg"));
+	        backgound3 = new ImageIcon(getClass().getResource("Backgound3.png"));
 	        pokemonIcon = new JLabel("");
 	        pokeballIcon1 = new JLabel("");
 	        pokeballIcon2 = new JLabel("");
 	        pokeballIcon3 = new JLabel("");
 	        pokeballIcon4 = new JLabel("");
 	        pokeballIcon5 = new JLabel("");
+	        backgoundLabel = new JLabel("");
 	        pokemonIcon.setIcon(start);
 	        pokemonIcon.setBounds(274, 43, 280, 188);
 	        pokeballIcon1.setIcon(pokeballIcon);
@@ -119,6 +130,8 @@ public class GUI extends JFrame{
 	        pokeballIcon4.setBounds(20, 297, 144, 131);
 	        pokeballIcon5.setIcon(bigPokeball);
 	        pokeballIcon5.setBounds(658, 297, 144, 131);
+	        backgoundLabel.setIcon(backgound);
+	        backgoundLabel.setBounds(0, 0, 834, 511);
 	        
 	        //Eatbutton action listener
 	        eatButton.addActionListener(new ActionListener() {
@@ -320,6 +333,7 @@ public class GUI extends JFrame{
                 		pokemonIcon.setIcon(psyduckIcon);
                 	}
 	    	        psyduckMember = 0;
+	    	        backgoundLabel.setIcon(backgound2);
 	    	        statusArea.setText(command.showStatus(command.pokemons,psyduckMember));
 	    	        if( (command.getEnergy(psyduckMember) <= 5) || (command.getFeeling(psyduckMember) <= 30))
 	    	        	pokemonIcon.setIcon(psyduckLazy);
@@ -328,6 +342,7 @@ public class GUI extends JFrame{
 	        
 	        snorlax.addActionListener(new ActionListener() {
 	        	public void actionPerformed(ActionEvent e) {
+	        		backgoundLabel.setIcon(backgound1);
 	        		pokemonIcon.setIcon(snorlaxIcon);
 	    	        snorlaxMember = 1;
 	    	        statusArea.setText(command.showStatus(command.pokemons,snorlaxMember));
@@ -345,6 +360,7 @@ public class GUI extends JFrame{
                 	else {
                 		pokemonIcon.setIcon(meowthIcon);
                 	}
+	        		backgoundLabel.setIcon(backgound3);
 	    	        meowthMember = 2;
 	    	        statusArea.setText(command.showStatus(command.pokemons,meowthMember));
 	    	        if( (command.getEnergy(meowthMember) <= 5) || (command.getFeeling(meowthMember) <= 30))
@@ -356,6 +372,7 @@ public class GUI extends JFrame{
 	
 	        
 	        //Set layout
+	        
 	        panel.add(Pokemon);
 	        panel.add(selectFood);
 	        panel.add(selectPokemon);
@@ -373,7 +390,7 @@ public class GUI extends JFrame{
 	        panel.add(pokeballIcon5);
 	        panel.add(exerciseButton);
 	        panel.add(sleepButton);
-	        
+	        panel.add(backgoundLabel);
 	        c.add(panel);
 	        
 	        //Set others
@@ -381,6 +398,7 @@ public class GUI extends JFrame{
 	        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	        setSize(850, 550);
 	        setVisible(true);
+	        
 		}
 		
 }
