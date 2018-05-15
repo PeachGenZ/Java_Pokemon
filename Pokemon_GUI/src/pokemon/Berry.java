@@ -9,13 +9,13 @@ public class Berry{
 		this.type = type;
 		switch(type){
 			case 0: this.name = "Berry";
-				this.restoreValue = 10;
+				this.restoreValue = 1;
 				break;
 			case 1: this.name = "GoldBerry";
-				this.restoreValue = 30;
+				this.restoreValue = 3;
 				break;
 			case 2: this.name = "MysteryBerry";
-				this.restoreValue = 100;
+				this.restoreValue = 5;
 				break;
 		}
 
